@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React app</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+       class Intro extends React.Component {
+        constructor(props){
+           super(props);
+           this.state = {
+             number: 8
+           }
+         }
+ 
+         render() {
+           return (
+             <div>
+               <h1>About: {this.props.label}</h1>
+               <h2>Student: {this.props.student}</h2>
+               <h3>Age: {this.props.age}</h3>
+               <h3>Curret week in Bloc WDT Program: {this.state.number}</h3>
+             </div>
+           );
+         }
+       }
+
+       
+
+       Intro.defaultProps = {
+         label: "My First React Component"
+       }
+ 
+       ReactDOM.render(
+         <Intro 
+         student="Raissa"
+         age="29"/>, document.getElementById('app')
+       );
+    </script>
+  </body>
+</html> 
